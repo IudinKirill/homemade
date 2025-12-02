@@ -5,16 +5,9 @@
                 @csrf
                 <div class="grid">
                     <x-form.input title="login" name="login" placeholder="Insert login"/>
-                    @error('login')
-                        <span class="text-red-400">{{ $message }}</span>
-                    @enderror
-
                 </div>
                 <div class="grid">
                     <x-form.input title="password" type="password" name="password" placeholder="Insert password"/>
-                    @error('password')
-                        <span class="text-red-400">{{ $message }}</span>
-                    @enderror
                 </div>
                 <x-form.button>Login</x-form.button>
             </form>
