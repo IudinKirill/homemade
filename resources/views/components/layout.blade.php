@@ -10,10 +10,10 @@
 
 <body class="flex flex-col h-screen">
     <header>
-        <x-header.a href="{{ route('home') }}">Home</x-header.a>
-        <x-header.a href="{{ route('page1') }}">Page1</x-header.a>
-        <x-header.a href="{{ route('page2') }}">Page2</x-header.a>
-        <x-header.a href="sdfsdf">Login</x-header.a>
+        <x-header.a route="home">Home</x-header.a>
+        <x-header.a route="page1">Page1</x-header.a>
+        <x-header.a route="page2">Page2</x-header.a>
+        {{-- <x-header.a route="sdfsdf">Login</x-header.a> --}}
         <button>Register</button>
     </header>
     <main class="flex-grow">

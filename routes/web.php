@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -7,7 +8,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/page1', function () {
-    
+
 
     return view('page1');
 })->name('page1');
@@ -15,3 +16,5 @@ Route::get('/page1', function () {
 Route::get('/page2', function () {
     return view('page2');
 })->name('page2');
+
+Route::post('login', [FormController::class, 'login'])->name('login');

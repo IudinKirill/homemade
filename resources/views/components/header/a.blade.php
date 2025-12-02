@@ -1,4 +1,10 @@
+@php
+    $link = route($route)
+@endphp
+
 <a {{ $attributes->class([
-    'text-sm font-semibold text-gray-400 hover:text-gray-800',
-    $href == url()->current() ? 'text-gray-800' : 'text-gray-400'
-    ]) }}>{{ $slot }}</a>
+    'hover:text-gray-800',
+    $link == url()->current() ? 'text-gray-800' : 'text-gray-400'
+])->merge([
+    'href' => $link
+]) }}>{{ $slot }} </a>
