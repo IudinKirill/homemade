@@ -11,7 +11,7 @@
 <body class="flex flex-col h-screen">
     <header>
         <x-header.a route="home">Home</x-header.a>
-        <x-header.a route="page1">Page1</x-header.a>
+        <x-header.a route="country.index">Country</x-header.a>
         <x-header.a route="page2">Page2</x-header.a>
         {{-- <x-header.a route="sdfsdf">Login</x-header.a> --}}
         <button>Register</button>

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Country;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,10 +18,12 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::create([
-            'login' => 'admin',
-            'email' => 'admin@example.com',
-            'password' => '1111',
-        ]);
+        // User::create([
+        //     'login' => 'admin',
+        //     'email' => 'admin@example.com',
+        //     'password' => '1111',
+        // ]);
+
+        Country::factory(193)->create();
     }
 }
