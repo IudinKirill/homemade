@@ -9,7 +9,16 @@
                     <tr class="grid grid-cols-[1fr_9fr_1fr_1fr]">
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Top</th>
+                        <th>
+                        <a href="{{ route('country.index', [
+                        'sort' => 'top',
+                        'direction' => $sort === 'top' && $direction === 'desc' ? 'asc' : 'desc'
+                        ]) }}" class="flex items-center gap-1 hover:text-blue-600 font-semibold">Top 
+                            @if ($sort === 'top')
+                            <span class="text-sm">{{ $direction === 'desc' ? ' ↓' : ' ↑' }}</span>
+                            @endif
+                        </a>
+                        </th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -35,9 +44,7 @@
                             <form action="{{ route('country.destroy', $country) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="text-red-500 hover:text-red-700 text-sm">
-                            <x-form.button>DELETE</x-form.button>
-                            </button>
+                            <x-form.button type="submit">DELETE</x-form.button>
                             </form>
                             </td>
                         </tr>
