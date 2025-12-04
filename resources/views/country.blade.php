@@ -45,7 +45,7 @@
                     @endforeach
                 </tbody>
 
-                <table>
+            </table>
         @endif
 
     </x-ui.section>
