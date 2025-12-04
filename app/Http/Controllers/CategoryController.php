@@ -12,4 +12,9 @@ class CategoryController extends Controller
         $categories = Category::all();
         return view('category', compact('categories'));
     }
+    public function destroy(Category $category)
+    {
+        $category->delete();
+        return redirect()->route('category.index');
+    }
 }

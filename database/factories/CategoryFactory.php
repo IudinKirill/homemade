@@ -18,8 +18,7 @@ class CategoryFactory extends Factory
     {
         return [
             'name' => fake()->unique()->word(),
-            'description' => fake()->sentence(10),
-            'top' => fake()->numberBetween(1,100),
+            'description' => fake()->sentence(10)
         ];
     }
 }
