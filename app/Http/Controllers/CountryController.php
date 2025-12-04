@@ -9,21 +9,18 @@ class CountryController extends Controller
 {
     public function index(Request $request)
 {
-    $query = Country::query();
+    $sort = $request->input('sort', 'top');
+    $direction = $request->input('direction', 'desc');
 
-    // Поиск по названию или коду
-    if ($request->filled('search')) {
-        $search = $request->input('search');
-        $query->where('name', 'like', "%{$search}%")
-              ->orWhere('code', 'like', "%{$search}%");
-    }
+    // Защита от неожиданных значений
+    $sort = in_array($sort, ['top']) ? $sort : 'top';
+    $direction = in_array($direction, ['asc', 'desc']) ? $direction : 'desc';
 
-    $query->orderBy('top', 'desc');
+    $countries = Country::orderBy($sort, $direction)->paginate(15)->withQueryString();
 
-    $countries = $query->get();
-
-    return view('country', compact('countries'));
+    return view('country.index', compact('countries', 'sort', 'direction'));
 }
+
     public function destroy(Country $country)
     {
         $country->delete();
